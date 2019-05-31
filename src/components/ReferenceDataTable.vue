@@ -1,9 +1,9 @@
 <template>
-  <v-flex xs12 mt-5>
+  <v-flex xs12>
     <h1>Data Table</h1>
     <div>
       <!-- I haven't made any change to this template. This is only copy and paste from doc site. -->
-      <v-dialog v-model="dialog" max-width="500px">
+      <v-dialog v-model="dialog">
         <v-btn color="primary" dark slot="activator" class="mb-2">New Item</v-btn>
         <v-card>
           <v-card-title>
@@ -27,6 +27,12 @@
                 <v-flex xs12 sm6 md4>
                   <v-text-field label="Protein (g)" v-model="editedItem.protein"></v-text-field>
                 </v-flex>
+                <v-flex xs12 sm6 md4>
+                  <v-text-field label="English" v-model="editedItem.english"></v-text-field>
+                </v-flex>
+                <v-flex xs12 sm6 md4>
+                  <v-text-field label="translation" v-model="editedItem.translation"></v-text-field>
+                </v-flex>
               </v-layout>
             </v-container>
           </v-card-text>
@@ -44,6 +50,8 @@
           <td class="text-xs-right">{{ props.item.fat }}</td>
           <td class="text-xs-right">{{ props.item.carbs }}</td>
           <td class="text-xs-right">{{ props.item.protein }}</td>
+          <td class="text-xs-right">{{ props.item.english }}</td>
+          <td class="text-xs-right">{{ props.item.translation }}</td>
           <td class="justify-center layout px-0">
             <v-btn icon class="mx-0" @click="editItem(props.item)">
               <v-icon color="teal">edit</v-icon>
@@ -76,12 +84,30 @@ export default {
       { text: "Fat (g)", value: "fat" },
       { text: "Carbs (g)", value: "carbs" },
       { text: "Protein (g)", value: "protein" },
+      { text: "English", value: "english" },
+      { text: "Translation", value: "translation" },
       { text: "Actions", value: "name", sortable: false }
     ],
     items: [],
     editedIndex: -1,
-    editedItem: { name: "", calories: 0, fat: 0, carbs: 0, protein: 0 },
-    defaultItem: { name: "", calories: 0, fat: 0, carbs: 0, protein: 0 }
+    editedItem: {
+      name: "",
+      calories: 0,
+      fat: 0,
+      carbs: 0,
+      protein: 0,
+      english: "",
+      translation: ""
+    },
+    defaultItem: {
+      name: "",
+      calories: 0,
+      fat: 0,
+      carbs: 0,
+      protein: 0,
+      english: "",
+      translation: ""
+    }
   }),
 
   computed: {
@@ -108,35 +134,19 @@ export default {
           calories: 159,
           fat: 6.0,
           carbs: 24,
-          protein: 4.0
+          protein: 4.0,
+          english: "aaaa bbbb",
+          translation: "テスト1"
         },
         {
           name: "Ice cream sandwich",
           calories: 237,
           fat: 9.0,
           carbs: 37,
-          protein: 4.3
-        },
-        { name: "Eclair", calories: 262, fat: 16.0, carbs: 23, protein: 6.0 },
-        { name: "Cupcake", calories: 305, fat: 3.7, carbs: 67, protein: 4.3 },
-        {
-          name: "Gingerbread",
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9
-        },
-        {
-          name: "Jelly bean",
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0
-        },
-        { name: "Lollipop", calories: 392, fat: 0.2, carbs: 98, protein: 0 },
-        { name: "Honeycomb", calories: 408, fat: 3.2, carbs: 87, protein: 6.5 },
-        { name: "Donut", calories: 452, fat: 25.0, carbs: 51, protein: 4.9 },
-        { name: "KitKat", calories: 518, fat: 26.0, carbs: 65, protein: 7 }
+          protein: 4.3,
+          english: "aaaa bbbb",
+          translation: "テスト2"
+        }
       ];
     },
 

@@ -17,7 +17,6 @@
 
     <v-content>
       <v-container>
-        <RegisterForm/>
         <ReferenceDataTable/>
       </v-container>
     </v-content>
