@@ -1,0 +1,14 @@
+{
+  "sentences": [
+    {
+      "english": "That's one small step for man, one giant leap for mankind.",
+      "translation": "これは一人の人間にとっては小さな一歩だが、人類にとっては偉大な飛躍である。",
+      "wordBlankPos": [2, 8]
+    },
+    {
+      "english": "If you can dream it, you can do it.",
+      "translation": "夢見ることができれば、それは実現できる。",
+      "wordBlanPos": [3, 8]
+    }
+  ]
+}

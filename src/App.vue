@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app dark>
     <v-toolbar app>
       <v-toolbar-title class="headline">
         <h1>Sentence</h1>
@@ -16,20 +16,23 @@
     </v-toolbar>
 
     <v-content>
-      <RegisterForm/>
+      <v-container>
+        <RegisterForm/>
+        <ReferenceDataTable/>
+      </v-container>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
 import RegisterForm from "./components/RegisterForm";
+import ReferenceDataTable from "./components/ReferenceDataTable";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
-    RegisterForm
+    RegisterForm,
+    ReferenceDataTable
   },
   data() {
     return {

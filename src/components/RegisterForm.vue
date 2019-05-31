@@ -1,35 +1,31 @@
 <template>
-  <v-container>
-    <v-layout>
-      <v-flex xs12>
-        <h1>Register form</h1>
-        <form>
-          <v-text-field
-            v-model="english"
-            :error-messages="englishErrors"
-            label="English"
-            required
-            outline
-            @input="$v.english.$touch()"
-            @blur="$v.english.$touch()"
-            @keyup="wordsCounter"
-          ></v-text-field>
-          <p>current word counter: {{currentWordsCount}}</p>
-          <v-text-field
-            v-model="translation"
-            :error-messages="translationErrors"
-            label="Translation"
-            required
-            outline
-            @input="$v.translation.$touch()"
-            @blur="$v.translation.$touch()"
-          ></v-text-field>
-          <v-btn @click="submit">submit</v-btn>
-          <v-btn @click="clear">clear</v-btn>
-        </form>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <v-flex xs12>
+    <h1>Register form</h1>
+    <form>
+      <v-text-field
+        v-model="english"
+        :error-messages="englishErrors"
+        label="English"
+        required
+        outline
+        @input="$v.english.$touch()"
+        @blur="$v.english.$touch()"
+        @keyup="wordsCounter"
+      ></v-text-field>
+      <p>current word counter: {{currentWordsCount}}</p>
+      <v-text-field
+        v-model="translation"
+        :error-messages="translationErrors"
+        label="Translation"
+        required
+        outline
+        @input="$v.translation.$touch()"
+        @blur="$v.translation.$touch()"
+      ></v-text-field>
+      <v-btn @click="submit">submit</v-btn>
+      <v-btn @click="clear">clear</v-btn>
+    </form>
+  </v-flex>
 </template>
 
 <script>
